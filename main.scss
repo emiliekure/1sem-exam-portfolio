@@ -1,0 +1,2108 @@
+$lighttext: #FFFFFF;
+$mediumgrey: #999999;
+$darkgrey: #404040;
+$bggrey: #F2F2F2;
+$lightgreen: #CBE6CF;
+$darkgreen: #80B385;
+$menucolor: rgba(242, 242, 242, 0.90);
+$boxshadow: 0 0 16px 4px rgba(153, 153, 153, 0.5);
+$focusshadow: 0 0 16px 4px rgba(64, 64, 64, 0.5);
+$menulogoheight: 40px;
+$footerpaddinglarge: 32px 128px;
+$footerpaddingmedium: 32px 64px;
+$footerpaddingsmall: 16px;
+$padding: 32px;
+$textboxpadding: 48px;
+$toprowheight: 120px;
+$submenuheight: 68px;
+$headlinemargins: 0 0 20px 0;
+$carddetailwidth: 40%;
+$carddescriptionwidth: 50%;
+$buttonhover: 0 0 4px #FFFFFF;
+
+* {
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: $bggrey;
+  color: $darkgrey;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 175%;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.mono {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 60px;
+  margin: $headlinemargins;
+  padding: 0;
+
+  sup {
+    font-size: 40px;
+  }
+}
+
+h2 {
+  font-size: 48px;
+  margin: $headlinemargins;
+  padding: 0;
+
+  sup {
+    font-size: 32px;
+  }
+}
+
+h3 {
+  font-size: 36px;
+  margin: $headlinemargins;
+  padding: 0;
+
+  sup {
+    font-size: 24px;
+  }
+}
+
+h4 {
+  font-size: 24px;
+  margin: $headlinemargins;
+  padding: 0;
+
+  sup {
+    font-size: 16px;
+  }
+}
+
+.header {
+  background-color: $menucolor;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 50;
+
+  .nav-logo {
+    display: inline-block;
+    margin: 32px 0 8px;
+    height: $menulogoheight;
+  }
+
+  span #openmenu {
+    display: none;
+  }
+
+  #menu {
+    width: 100%;
+
+    .closemenu {
+      display: none;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 24px;
+
+      li {
+        display: inline-block;
+        float: none;
+
+        :hover {
+          color: $darkgrey;
+          transition: color 0.25s;
+        }
+      }
+
+      a {
+        color: $mediumgrey;
+        text-decoration: none;
+        display: block;
+        padding: 20px;
+        transition: color 0.25s;
+      }
+
+      .active {
+        color: $darkgrey;
+      }
+    }
+  }
+}
+
+.main {
+  width: 100%;
+  margin-top: 240px;
+  flex: 1 0 auto;
+  display: grid;
+  grid-template-columns: minmax(80px, 1fr) repeat(2, $padding $padding minmax(168px, 252px) minmax(168px, 252px) $padding $padding) minmax(80px, 1fr);
+
+  .headline {
+    grid-area: 1 / 5 / 2 / 11;
+    place-self: start center;
+  }
+
+  #opensub1,
+  #opensub2 {
+    display: none;
+  }
+
+  #submenu-1,
+  #submenu-2 {
+    width: 100%;
+    background-color: $lighttext;
+    box-shadow: $boxshadow;
+    text-align: center;
+
+    .closemenu {
+      display: none;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 24px;
+
+      li {
+        display: inline-block;
+        float: none;
+
+        :hover {
+          color: $darkgrey;
+          transition: color 0.25s;
+        }
+      }
+
+      a {
+        color: $mediumgrey;
+        text-decoration: none;
+        display: block;
+        padding: 20px;
+        transition: color 0.25s;
+
+        sup {
+          font-size: 14px;
+        }
+      }
+
+      .active {
+        color: $darkgrey;
+      }
+
+      svg {
+        margin-bottom: -4px;
+      }
+    }
+  }
+
+  #submenu-1 {
+    grid-area: 2 / 1 / 3 / 15;
+    z-index: 2;
+  }
+
+  #submenu-2 {
+    grid-area: 3 / 1 / 4 / 15;
+    z-index: 1;
+  }
+
+  .btnlinkgreen {
+    margin: auto auto 0;
+    width: auto;
+    place-self: center;
+    padding: 0;
+    text-decoration: none;
+    transition: box-shadow 0.25s, text-shadow 0.25s, color 0.25s;
+
+    .button {
+      display: inline-block;
+      color: $bggrey;
+      background-color: $darkgreen;
+      padding: 24px;
+      margin: 0;
+      text-align: center;
+      font-size: inherit;
+      transition: box-shadow 0.25s, text-shadow 0.25s, color 0.25s;
+    }
+
+    :hover {
+      box-shadow: $boxshadow;
+      color: $lighttext;
+      text-shadow: $buttonhover;
+      transition: box-shadow 0.25s, text-shadow 0.25s, color 0.25s;
+    }
+  }
+
+  .btnlinkgrey {
+    margin: auto auto 0;
+    width: auto;
+    place-self: center;
+    padding: 0;
+    text-decoration: none;
+    transition: box-shadow 0.25s, text-shadow 0.25s, color 0.25s;
+
+    .button {
+      display: inline-block;
+      color: $bggrey;
+      background-color: $mediumgrey;
+      padding: 24px;
+      margin: 0;
+      text-align: center;
+      font-size: inherit;
+      transition: box-shadow 0.25s, text-shadow 0.25s, color 0.25s;
+    }
+
+    :hover {
+      box-shadow: $boxshadow;
+      color: $lighttext;
+      text-shadow: $buttonhover;
+      transition: box-shadow 0.25s, text-shadow 0.25s, color 0.25s;
+    }
+  }
+
+  #backbtn {
+    grid-area: 5 / 4 / 6 / 5;
+    place-self: start center;
+    color: $mediumgrey;
+    font-size: 24px;
+    cursor: pointer;
+
+    svg {
+      margin-bottom: -4px;
+    }
+  }
+}
+
+.index {
+  grid-template-rows: $toprowheight repeat(3, $submenuheight) repeat(4, $padding auto $padding);
+
+  .name {
+    grid-area: 1 / 5 / 3 / 11;
+    place-self: center;
+  }
+
+  .titles {
+    grid-area: 3 / 4 / 4 / 12;
+    place-self: center;
+    font-size: 24px;
+  }
+
+  .box1 {
+    grid-area: 6 / 3 / 8 / 9;
+    background-color: $lighttext;
+    padding: $textboxpadding 112px 0 $textboxpadding;
+    box-shadow: $boxshadow;
+    z-index: 1;
+
+    p {
+      padding-bottom: $textboxpadding;
+    }
+  }
+
+  .vid1 {
+    grid-area: 5 / 7 / 7 / 13;
+    place-self: start;
+    z-index: 2;
+
+    video {
+      width: 100%;
+      height: auto;
+      box-shadow: $boxshadow;
+      display: block;
+    }
+  }
+
+  .banner1 {
+    grid-area: 8 / 1 / 11 / 15;
+    background-color: $darkgreen;
+    color: $lighttext;
+    box-shadow: $boxshadow;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: inherit;
+    grid-template-rows: $padding auto $padding;
+
+    .bannertext1,
+    .bannertext2 {
+      padding: 16px;
+    }
+
+    .bannertext1 {
+      grid-area: 2 / 3 / 3 / 7;
+    }
+
+    .bannertext2 {
+      grid-area: 2 / 9 / 3 / 13;
+    }
+  }
+
+  .vid2 {
+    grid-area: 12 / 3 / 14 / 9;
+    place-self: end;
+    z-index: 2;
+
+    video {
+      width: 100%;
+      height: auto;
+      box-shadow: $boxshadow;
+      display: block;
+    }
+  }
+
+  .box2 {
+    grid-area: 11 / 7 / 13 / 13;
+    background-color: $lightgreen;
+    padding: $textboxpadding $textboxpadding 0 112px;
+    box-shadow: $boxshadow;
+    z-index: 1;
+
+    p {
+      padding-bottom: $textboxpadding;
+    }
+  }
+
+  .index-cta {
+    grid-area: 15 / 5 / 16 / 11;
+    text-align: center;
+    padding-top: $textboxpadding;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+
+.portfolio {
+  grid-template-rows: $toprowheight repeat(2, $submenuheight) $padding auto $padding;
+  margin-bottom: $textboxpadding;
+
+  .box1 {
+    grid-area: 5 / 3 / 8 / 13;
+    text-align: center;
+
+    sup {
+      font-size: 14px;
+    }
+  }
+
+  .project-list {
+    grid-area: 4 / 3 / 7 / 13;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+
+      .gallery-card {
+        position: relative;
+        text-align: center;
+        box-shadow: $boxshadow;
+        margin: 24px;
+        padding: 0;
+
+        .gallery-pic {
+          width: 350px;
+
+          img {
+            height: auto;
+            width: 100%;
+            display: block;
+            transition: 0.5s;
+          }
+
+          .project-title {
+            position: absolute;
+            width: 75%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            h3 {
+              margin: 0;
+              padding: 0;
+              transition: 0.5s;
+            }
+          }
+
+          .overlay {
+            background-color: $lighttext;
+            height: 100%;
+            width: 100%;
+            transition: 0.5s;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+          }
+
+          .ol-text {
+            font-size: inherit;
+            transition: 0.5s;
+            opacity: 0;
+            position: absolute;
+            width: 75%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+
+            sup {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      :hover {
+        .gallery-pic {
+          .project-title {
+            h3 {
+              opacity: 0;
+            }
+          }
+
+          .overlay {
+            opacity: 0.75;
+          }
+
+          .ol-text {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pro,
+.school {
+  grid-template-rows: $toprowheight repeat(3, $submenuheight) $padding auto $padding;
+  margin-bottom: $textboxpadding;
+
+  .project-list {
+    grid-area: 5 / 3 / 8 / 13;
+  }
+}
+
+.first-project {
+  grid-template-rows: $toprowheight repeat(3, $submenuheight) minmax($padding, auto) repeat(4, $padding auto $padding);
+
+  .info {
+    grid-area: 5 / 5 / 6 / 11;
+    place-self: center;
+    text-align: center;
+  }
+
+  .scope {
+    grid-area: 7 / 4 / 9 / 12;
+    background-color: $lighttext;
+    box-shadow: $boxshadow;
+    padding: $textboxpadding;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .scope-text {
+      max-width: 65%;
+    }
+
+    .scope-btn {
+      margin: auto 0;
+      padding-left: $textboxpadding;
+      width: 35%;
+      text-align: center;
+
+      .btnlinkgreen {
+        .button {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .banner1 {
+    grid-area: 9 / 1 / 12 / 15;
+    background-color: $darkgreen;
+    color: $lighttext;
+    box-shadow: $boxshadow;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: inherit;
+    grid-template-rows: $padding auto $padding;
+
+    .challenges,
+    .ideas {
+      padding: 16px;
+    }
+
+    .ideas {
+      grid-area: 2 / 3 / 3 / 7;
+    }
+
+    .challenges {
+      grid-area: 2 / 9 / 3 / 13;
+    }
+  }
+
+  .product {
+    grid-area: 12 / 3 / 14 / 10;
+    place-self: start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: $lightgreen;
+    padding: $textboxpadding;
+    box-shadow: $boxshadow;
+    height: auto;
+    width: 100%;
+    text-align: center;
+
+    .btnlinkgrey {
+      display: block;
+      width: 100%;
+
+      .button {
+        margin: 16px;
+      }
+    }
+
+    p {
+      text-align: left;
+      margin: $padding;
+    }
+
+    h4 {
+      text-align: center;
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+
+      .gallery-card {
+        position: relative;
+        text-align: center;
+        box-shadow: $boxshadow;
+        margin: 24px;
+        padding: 0;
+
+        .gallery-pic {
+          width: 350px;
+
+          img {
+            height: auto;
+            width: 100%;
+            display: block;
+            transition: 0.5s;
+          }
+
+          .overlay {
+            background-color: $lighttext;
+            height: 100%;
+            width: 100%;
+            transition: 0.5s;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+          }
+
+          .ol-text {
+            font-size: inherit;
+            transition: 0.5s;
+            opacity: 0;
+            position: absolute;
+            width: 75%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+
+            sup {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      :hover {
+        .gallery-pic {
+          .project-title {
+            h3 {
+              opacity: 0;
+            }
+          }
+
+          .overlay {
+            opacity: 0.75;
+          }
+
+          .ol-text {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    iframe {
+      box-shadow: $boxshadow;
+      margin: $padding;
+      padding: 0;
+      display: none;
+    }
+  }
+
+  .feedback {
+    grid-area: 13 / 9 / 17 / 13;
+    place-self: start center;
+    background-color: $mediumgrey;
+    color: $lighttext;
+    padding: $textboxpadding;
+    box-shadow: $boxshadow;
+    height: auto;
+    width: 100%;
+    z-index: 3;
+
+    .skills {
+      background-color: $darkgreen;
+      color: $lighttext;
+      padding: $textboxpadding;
+      box-shadow: $boxshadow;
+      margin-top: $textboxpadding;
+
+      ul {
+        margin: 0;
+        list-style-type: none;
+        line-height: 175%;
+        padding: 0;
+      }
+    }
+  }
+
+  .changes {
+    grid-area: 16 / 3 / 18 / 10;
+    place-self: end center;
+    background-color: $lighttext;
+    box-shadow: $boxshadow;
+    padding: $textboxpadding 112px $textboxpadding $textboxpadding;
+    height: auto;
+    width: 100%;
+    text-align: center;
+
+    h4,
+    ul {
+      text-align: left;
+    }
+
+    ul {
+      line-height: 175%;
+    }
+
+    .btnlinkgreen {
+      display: block;
+      width: 100%;
+
+      .button {
+        margin-top: 16px;
+      }
+    }
+  }
+}
+
+.first-exam {
+  grid-template-rows: $toprowheight repeat(3, $submenuheight) minmax($padding, auto) $submenuheight repeat(8, $padding auto $padding);
+
+  .info {
+    grid-area: 5 / 5 / 6 / 11;
+    place-self: center;
+    text-align: center;
+  }
+
+  .scope {
+    grid-area: 7 / 4 / 9 / 9;
+    place-self: start;
+    background-color: $lighttext;
+    box-shadow: $boxshadow;
+    padding: $textboxpadding 112px $textboxpadding $textboxpadding;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+
+    .scope-btn {
+      width: 100%;
+      text-align: center;
+      margin-top: $textboxpadding;
+    }
+  }
+
+  .planning {
+    grid-area: 8 / 7 / 11 / 12;
+    place-self: end;
+    background-color: $lightgreen;
+    box-shadow: $boxshadow;
+    padding: $textboxpadding $textboxpadding 80px;
+    height: auto;
+    width: 100%;
+
+    .buttons {
+      text-align: center;
+
+      .btnlinkgrey {
+        display: block;
+        width: 100%;
+
+        .button {
+          margin-top: $textboxpadding;
+        }
+      }
+    }
+  }
+
+  .usertest1 {
+    grid-area: 10 / 4 / 13 / 11;
+    background-color: $mediumgrey;
+    color: $lighttext;
+    box-shadow: $boxshadow;
+    padding: $textboxpadding;
+  }
+
+  .design-banner {
+    grid-area: 13 / 1 / 16 / 15;
+    background-color: $darkgreen;
+    color: $lighttext;
+    box-shadow: $boxshadow;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: inherit;
+    grid-template-rows: $padding auto auto $padding;
+
+    h4 {
+      grid-area: 2 / 5 / 3 / 11;
+      padding: 16px;
+      margin: 0;
+      text-align: center;
+    }
+
+    .all-design {
+      display: none;
+    }
+
+    .design1,
+    .design2 {
+      padding: 16px;
+    }
+
+    .design1 {
+      grid-area: 3 / 3 / 4 / 7;
+    }
+
+    .design2 {
+      grid-area: 3 / 9 / 4 / 13;
+    }
+  }
+
+  .styleguide {
+    grid-area: 16 / 3 / 20 / 13;
+    place-self: start;
+    background-color: $lighttext;
+    box-shadow: $boxshadow;
+    padding: $textboxpadding $textboxpadding 80px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+
+    h4 {
+      width: 100%;
+    }
+
+    .stylecard {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: $textboxpadding;
+
+      a {
+        width: 25%;
+        display: inline-block;
+        margin: auto 0;
+
+        img {
+          width: 100%;
+          box-shadow: $boxshadow;
+          display: block;
+        }
+      }
+
+      p {
+        width: 70%;
+        text-align: left;
+        margin: auto 0;
+      }
+    }
+  }
+
+  .prototype {
+    grid-area: 19 / 5 / 23 / 12;
+    place-self: end;
+    background-color: $lightgreen;
+    box-shadow: $boxshadow;
+    padding: $textboxpadding $textboxpadding 80px;
+    height: auto;
+    width: 100%;
+
+    img {
+      width: 100%;
+      box-shadow: $boxshadow;
+      margin-top: $padding;
+    }
+
+    .btnlinkgrey {
+      display: block;
+      width: 100%;
+      text-align: center;
+
+      .button {
+        margin-top: $textboxpadding;
+      }
+    }
+  }
+
+  .video {
+    grid-area: 22 / 4 / 25 / 11;
+    background-color: $mediumgrey;
+    color: $lighttext;
+    box-shadow: $boxshadow;
+    padding: $textboxpadding;
+  }
+
+  .remakes-banner {
+    grid-area: 25 / 1 / 28 / 15;
+    background-color: $darkgreen;
+    color: $lighttext;
+    box-shadow: $boxshadow;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: inherit;
+    grid-template-rows: $padding auto auto $padding;
+
+    h4 {
+      grid-area: 2 / 5 / 3 / 11;
+      padding: 16px;
+      margin: 0;
+      text-align: center;
+    }
+
+    .remakes {
+      grid-area: 3 / 3 / 4 / 13;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .remake-card {
+        width: 25%;
+        text-align: center;
+        margin-top: $padding;
+
+        p {
+          font-weight: 500;
+        }
+
+        .btnlinkgrey {
+          .button {
+            margin: $padding 16px 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .code {
+    grid-area: 28 / 3 / 30 / 9;
+    place-self: start;
+    background-color: $lightgreen;
+    box-shadow: $boxshadow;
+    padding: $textboxpadding 112px $textboxpadding $textboxpadding;
+    height: auto;
+    width: 100%;
+
+    .btnlinkgrey {
+      display: block;
+      width: 100%;
+      text-align: center;
+
+      .button {
+        margin-top: $textboxpadding;
+      }
+    }
+  }
+
+  .conclusion {
+    grid-area: 29 / 7 / 31 / 13;
+    place-self: end;
+    background-color: $lighttext;
+    box-shadow: $boxshadow;
+    padding: $textboxpadding;
+    height: auto;
+    width: 100%;
+  }
+}
+
+.about {
+  .btnlinkgreen {
+    grid-area: 4 / 5 / 5 / 11;
+  }
+
+  .card-1 {
+    margin-top: $textboxpadding;
+    background-color: $lighttext;
+    grid-area: 6 / 4 / 7 / 12;
+    padding: $textboxpadding;
+    box-shadow: $boxshadow;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .left-detail {
+      width: $carddetailwidth;
+      background-color: $darkgreen;
+      color: $lighttext;
+      padding: $textboxpadding;
+      box-shadow: $boxshadow;
+
+      .when {
+        margin-bottom: $padding;
+      }
+    }
+
+    .right-description {
+      max-width: $carddescriptionwidth;
+      margin-left: $textboxpadding;
+
+      .title {
+        margin: $footerpaddingsmall 0 $padding;
+      }
+    }
+  }
+
+  .card-2 {
+    background-color: $lightgreen;
+    grid-area: 9 / 4 / 10 / 12;
+    padding: $textboxpadding;
+    box-shadow: $boxshadow;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .right-detail {
+      width: $carddetailwidth;
+      background-color: $mediumgrey;
+      color: $lighttext;
+      padding: $textboxpadding;
+      box-shadow: $boxshadow;
+
+      .when {
+        margin-bottom: $padding;
+      }
+    }
+
+    .left-description {
+      max-width: $carddescriptionwidth;
+      margin-right: $textboxpadding;
+
+      .title {
+        margin: $footerpaddingsmall 0 $padding;
+      }
+    }
+  }
+
+  .card-3 {
+    background-color: $lighttext;
+    grid-area: 12 / 4 / 13 / 12;
+    padding: $textboxpadding;
+    box-shadow: $boxshadow;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .left-detail {
+      width: $carddetailwidth;
+      background-color: $darkgreen;
+      color: $lighttext;
+      padding: $textboxpadding;
+      box-shadow: $boxshadow;
+
+      .when {
+        margin-bottom: $padding;
+      }
+    }
+
+    .right-description {
+      max-width: $carddescriptionwidth;
+      margin-left: $textboxpadding;
+
+      .title {
+        margin: $footerpaddingsmall 0 $padding;
+      }
+    }
+  }
+
+  .card-4 {
+    background-color: $lightgreen;
+    grid-area: 15 / 4 / 16 / 12;
+    padding: $textboxpadding;
+    box-shadow: $boxshadow;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .right-detail {
+      width: $carddetailwidth;
+      background-color: $mediumgrey;
+      color: $lighttext;
+      padding: $textboxpadding;
+      box-shadow: $boxshadow;
+
+      .when {
+        margin-bottom: $padding;
+      }
+    }
+
+    .left-description {
+      max-width: $carddescriptionwidth;
+      margin-right: $textboxpadding;
+
+      .title {
+        margin: $footerpaddingsmall 0 $padding;
+      }
+    }
+  }
+
+  .card-5 {
+    background-color: $lighttext;
+    grid-area: 18 / 4 / 19 / 12;
+    padding: $textboxpadding;
+    box-shadow: $boxshadow;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .left-detail {
+      width: $carddetailwidth;
+      background-color: $darkgreen;
+      color: $lighttext;
+      padding: $textboxpadding;
+      box-shadow: $boxshadow;
+
+      .when {
+        margin-bottom: $padding;
+      }
+    }
+
+    .right-description {
+      max-width: $carddescriptionwidth;
+      margin-left: $textboxpadding;
+
+      .title {
+        margin: $footerpaddingsmall 0 $padding;
+      }
+    }
+  }
+}
+
+.profile {
+  grid-template-rows: $toprowheight repeat(2, $submenuheight) repeat(3, $padding auto $padding);
+  margin-bottom: $textboxpadding;
+
+  .box1 {
+    grid-area: 5 / 7 / 7 / 13;
+    background-color: $lighttext;
+    padding: $textboxpadding $textboxpadding 0 112px;
+    box-shadow: $boxshadow;
+    z-index: 1;
+
+    p {
+      padding-bottom: $textboxpadding;
+    }
+  }
+
+  .pic1 {
+    grid-area: 4 / 4 / 6 / 9;
+    place-self: end;
+    z-index: 2;
+    box-shadow: $boxshadow;
+    width: 75%;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .banner1 {
+    grid-area: 7 / 1 / 10 / 15;
+    background-color: $darkgreen;
+    color: $lighttext;
+    box-shadow: $boxshadow;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: inherit;
+    grid-template-rows: $padding auto $padding;
+
+    .bannertext1,
+    .bannertext2 {
+      padding: 16px;
+    }
+
+    .bannertext1 {
+      grid-area: 2 / 3 / 3 / 7;
+    }
+
+    .bannertext2 {
+      grid-area: 2 / 9 / 3 / 13;
+    }
+  }
+
+  .pic2 {
+    grid-area: 11 / 7 / 13 / 12;
+    place-self: start;
+    z-index: 2;
+    box-shadow: $boxshadow;
+    width: 75%;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .box2 {
+    grid-area: 10 / 3 / 12 / 9;
+    background-color: $lightgreen;
+    padding: $textboxpadding 112px 0 $textboxpadding;
+    box-shadow: $boxshadow;
+    z-index: 1;
+
+    p {
+      padding-bottom: $textboxpadding;
+    }
+  }
+}
+
+.education {
+  grid-template-rows: $toprowheight repeat(2, $submenuheight) minmax($padding, auto) repeat(5, $padding auto $padding);
+}
+
+.experience {
+  grid-template-rows: $toprowheight repeat(2, $submenuheight) minmax($padding, auto) repeat(4, $padding auto $padding);
+}
+
+.contact {
+  grid-template-rows: $toprowheight repeat(2, $submenuheight) $padding auto $padding;
+
+  .subheading {
+    grid-area: 2 / 5 / 4 / 11;
+    place-self: center;
+    text-align: center;
+  }
+
+  form {
+    grid-area: 5 / 4 / 7 / 12;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: $textboxpadding;
+
+    input,
+    textarea {
+      font-size: inherit;
+      font-family: inherit;
+      color: inherit;
+      background-color: $lighttext;
+      border: 0;
+      box-shadow: $boxshadow;
+      margin: 20px;
+      padding: 12px;
+      resize: none;
+      transition: box-shadow 0.25s;
+    }
+
+    input {
+      width: 360px;
+    }
+
+    textarea {
+      width: 760px;
+    }
+
+    *::placeholder {
+      color: $mediumgrey;
+    }
+
+    *:focus,
+    *:hover {
+      outline: none !important;
+      box-shadow: $focusshadow;
+      transition: box-shadow 0.25s;
+    }
+  }
+}
+
+.footer {
+  flex-shrink: 0;
+  width: 100%;
+  background-color: $darkgrey;
+  color: $lighttext;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 32px;
+
+  .copyright {
+    text-align: left;
+    width: 50%;
+    padding: $footerpaddinglarge;
+    margin: auto;
+    font-size: 20px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .icons {
+    text-align: right;
+    width: 50%;
+    padding: $footerpaddinglarge;
+    margin: auto;
+
+    .i {
+      margin-left: 20px;
+      display: inline;
+
+      a {
+        color: $lighttext;
+      }
+
+      svg {
+        height: 21px;
+        width: 21px;
+        margin: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 48px;
+    margin: $headlinemargins;
+    padding: 0;
+
+    sup {
+      font-size: 38px;
+    }
+  }
+
+  h2 {
+    font-size: 40px;
+    margin: $headlinemargins;
+    padding: 0;
+
+    sup {
+      font-size: 30px;
+    }
+  }
+
+  h3 {
+    font-size: 32px;
+    margin: $headlinemargins;
+    padding: 0;
+
+    sup {
+      font-size: 22px;
+    }
+  }
+
+  .header {
+    .nav-logo {
+      display: none;
+    }
+
+    a {
+      color: $mediumgrey;
+      text-decoration: none;
+    }
+
+    span #openmenu {
+      display: inline-block;
+      cursor: pointer;
+      margin: 32px 0;
+      height: $menulogoheight;
+      transition: 0.5s;
+    }
+
+    #menu {
+      background-color: $menucolor;
+      height: 0;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      overflow-y: hidden;
+      transition: 0.5s;
+
+      .closemenu {
+        display: inline-block;
+        margin-top: 20px;
+
+        svg {
+          height: 48px;
+          width: 48px;
+        }
+      }
+
+      ul {
+        font-size: 32px;
+        font-weight: 700;
+
+        li {
+          color: $mediumgrey;
+          display: block;
+          float: none;
+        }
+
+        a {
+          color: $mediumgrey;
+          text-decoration: none;
+          display: block;
+          padding: 20px;
+          transition: color 0.25s;
+        }
+
+        .active {
+          color: $darkgrey;
+        }
+      }
+    }
+  }
+
+  .main {
+    margin-top: 149px;
+    grid-template-columns: minmax(1.2rem, 1fr) $padding minmax(auto, 70ch) $padding minmax(1.2rem, 1fr);
+
+    .headline {
+      grid-area: 1 / 3 / 2 / 4;
+    }
+
+    #opensub1,
+    #opensub2 {
+      display: inline-block;
+      width: 100%;
+      background-color: $lighttext;
+      box-shadow: $boxshadow;
+      text-align: center;
+      font-size: 24px;
+      padding: 20px;
+      cursor: pointer;
+
+      sup {
+        font-size: 14px;
+      }
+
+      svg {
+        margin-bottom: -4px;
+      }
+    }
+
+    #opensub1 {
+      grid-area: 2 / 1 / 3 / 6;
+      z-index: 2;
+    }
+
+    #opensub2 {
+      grid-area: 3 / 1 / 4 / 6;
+      z-index: 1;
+    }
+
+    #submenu-1,
+    #submenu-2 {
+      background-color: $menucolor;
+      height: 0;
+      position: fixed;
+      z-index: 50;
+      left: 0;
+      top: 0;
+      box-shadow: none;
+      overflow-y: hidden;
+      transition: 0.5s;
+
+      a {
+        color: $mediumgrey;
+        text-decoration: none;
+      }
+
+      .closemenu {
+        display: inline-block;
+        margin-top: 20px;
+
+        svg {
+          height: 48px;
+          width: 48px;
+        }
+      }
+
+      ul {
+        font-size: 32px;
+        font-weight: 700;
+
+        li {
+          color: $mediumgrey;
+          display: block;
+          float: none;
+        }
+
+        a {
+          color: $mediumgrey;
+          text-decoration: none;
+          display: block;
+          padding: 20px;
+          transition: color 0.25s;
+
+          sup {
+            font-size: 20px;
+          }
+
+          .iconarrow {
+            display: none;
+          }
+        }
+
+        .active {
+          color: $darkgrey;
+        }
+      }
+    }
+
+    .btnlinkgreen {
+      grid-area: 4 / 3 / 5 / 4;
+    }
+  }
+
+  .index {
+    grid-template-rows: $toprowheight repeat(3, $submenuheight) repeat(6, $padding auto $padding);
+
+    .name {
+      grid-area: 1 / 2 / 3 / 5;
+    }
+
+    .titles {
+      grid-area: 3 / 2 / 4 / 5;
+    }
+
+    .box1 {
+      grid-area: 5 / 3 / 9 / 3;
+      padding: $textboxpadding;
+
+      p {
+        padding: 0;
+        margin-bottom: $padding;
+      }
+    }
+
+    .vid1 {
+      grid-area: 8 / 2 / 11 / 5;
+    }
+
+    .banner1 {
+      grid-area: 11 / 1 / 14 / 6;
+      grid-template-columns: inherit;
+      grid-template-rows: $padding auto auto $padding;
+
+      .bannertext1 {
+        grid-area: 2 / 2 / 3 / 5;
+      }
+
+      .bannertext2 {
+        grid-area: 3 / 2 / 4 / 5;
+      }
+    }
+
+    .vid2 {
+      grid-area: 14 / 2 / 17 / 5;
+    }
+
+    .box2 {
+      grid-area: 16 / 3 / 20 / 4;
+      padding: $textboxpadding;
+
+      p {
+        padding: 0;
+        margin-top: $padding;
+      }
+    }
+
+    .index-cta {
+      grid-area: 20 / 2 / 22 / 5;
+    }
+  }
+
+  .portfolio {
+    .box1 {
+      grid-area: 5 / 2 / 8 / 5;
+    }
+
+    .project-list {
+      grid-area: 4 / 2 / 7 / 5;
+
+      a {
+        .gallery-card {
+          .gallery-pic {
+            width: 250px;
+
+            .ol-text,
+            .overlay {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .pro,
+  .school {
+    .project-list {
+      grid-area: 5 / 2 / 8 / 5;
+    }
+  }
+
+  .first-project {
+    grid-template-rows: $toprowheight repeat(3, $submenuheight) minmax($padding, auto) repeat(5, $padding auto $padding);
+
+    #backbtn {
+      display: none;
+    }
+
+    .info {
+      grid-area: 5 / 2 / 6 / 5;
+    }
+
+    .scope {
+      grid-area: 7 / 2 / 9 / 5;
+
+      .scope-text {
+        max-width: 100%;
+      }
+
+      .scope-btn {
+        padding-top: $textboxpadding;
+        padding-left: 0;
+        width: 100%;
+      }
+    }
+
+    .banner1 {
+      grid-area: 9 / 1 / 12 / 6;
+      grid-template-columns: inherit;
+      grid-template-rows: $padding auto auto $padding;
+
+      .ideas {
+        grid-area: 2 / 2 / 3 / 5;
+      }
+
+      .challenges {
+        grid-area: 3 / 2 / 4 / 5;
+      }
+    }
+
+    .product {
+      grid-area: 12 / 2 / 16 / 4;
+    }
+
+    .feedback {
+      grid-area: 15 / 3 / 18 / 5;
+    }
+
+    .changes {
+      grid-area: 17 / 2 / 20 / 4;
+      padding: 80px $textboxpadding $textboxpadding $textboxpadding;
+    }
+  }
+
+  .first-exam {
+    grid-template-rows: $toprowheight repeat(3, $submenuheight) minmax($padding, auto) repeat(10, $padding auto $padding);
+
+    #backbtn {
+      display: none;
+    }
+
+    .info {
+      grid-area: 5 / 2 / 6 / 5;
+    }
+
+    .scope {
+      grid-area: 7 / 2 / 10 / 4;
+      padding: $textboxpadding $textboxpadding 80px $textboxpadding;
+
+      .scope-text {
+        max-width: 100%;
+      }
+
+      .scope-btn {
+        width: 100%;
+      }
+    }
+
+    .planning {
+      grid-area: 9 / 3 / 13 / 5;
+    }
+
+    .usertest1 {
+      grid-area: 12 / 2 / 15 / 4;
+    }
+
+    .design-banner {
+      grid-area: 15 / 1 / 18 / 6;
+      grid-template-columns: inherit;
+      grid-template-rows: $padding auto auto $padding;
+
+      h4 {
+        grid-area: 2 / 2 / 3 / 5;
+      }
+
+      .design1, .design2 {
+        display: none;
+      }
+
+      .all-design {
+        display: block;
+        grid-area: 3 / 3 / 4 / 4;
+          padding: 16px;
+      }
+    }
+
+    .styleguide {
+      grid-area: 18 / 2 / 22 / 4;
+      padding: $textboxpadding;
+
+      .stylecard {
+        margin-top: 0;
+
+        a {
+          width: 50%;
+          margin: $padding auto;
+        }
+
+        p {
+          width: 100%;
+          margin: 0;
+        }
+      }
+
+      .stylecard:nth-child(even) {
+        flex-direction: column-reverse;
+      }
+    }
+
+    .prototype {
+      grid-area: 21 / 3 / 25 / 5;
+    }
+
+    .video {
+      grid-area: 24 / 2 / 27 / 4;
+    }
+
+    .remakes-banner {
+      grid-area: 27 / 1 / 30 / 6;
+
+      h4 {
+        grid-area: 2 / 3 / 3 / 4;
+      }
+
+      .remakes {
+        grid-area: 3 / 2 / 4 / 5;
+
+        .remake-card {
+          width: 50%;
+        }
+      }
+    }
+
+    .code {
+      grid-area: 30 / 2 / 34 / 4;
+      padding: $textboxpadding $textboxpadding 80px $textboxpadding;
+    }
+
+    .conclusion {
+      grid-area: 33 / 3 / 36 / 5;
+    }
+  }
+
+  .about {
+    .card-1 {
+      grid-area: 6 / 2 / 8 / 5;
+      padding: $padding;
+      justify-content: flex-start;
+
+      .left-detail {
+        width: 100%;
+        padding: $padding;
+
+        .when {
+          margin-bottom: $padding;
+        }
+      }
+
+      .right-description {
+        min-width: 100%;
+        margin-left: 0;
+
+        .title {
+          margin: $padding 0;
+        }
+      }
+    }
+
+    .card-2 {
+      grid-area: 9 / 2 / 11 / 5;
+      flex-direction: column-reverse;
+      padding: $padding;
+      justify-content: flex-start;
+
+      .right-detail {
+        width: 100%;
+        padding: $padding;
+
+        .when {
+          margin-bottom: $padding;
+        }
+      }
+
+      .left-description {
+        min-width: 100%;
+        margin-left: 0;
+
+        .title {
+          margin: $padding 0;
+        }
+      }
+    }
+
+    .card-3 {
+      grid-area: 12 / 2 / 14 / 5;
+      padding: $padding;
+      justify-content: flex-start;
+
+      .left-detail {
+        width: 100%;
+        padding: $padding;
+
+        .when {
+          margin-bottom: $padding;
+        }
+      }
+
+      .right-description {
+        min-width: 100%;
+        margin-left: 0;
+
+        .title {
+          margin: $padding 0;
+        }
+      }
+    }
+
+    .card-4 {
+      grid-area: 15 / 2 / 17 / 5;
+      flex-direction: column-reverse;
+      padding: $padding;
+      justify-content: flex-start;
+
+      .right-detail {
+        width: 100%;
+        padding: $padding;
+
+        .when {
+          margin-bottom: $padding;
+        }
+      }
+
+      .left-description {
+        min-width: 100%;
+        margin-left: 0;
+
+        .title {
+          margin: $padding 0;
+        }
+      }
+    }
+
+    .card-5 {
+      grid-area: 18 / 2 / 20 / 5;
+      padding: $padding;
+      justify-content: flex-start;
+
+      .left-detail {
+        width: 100%;
+        padding: $padding;
+
+        .when {
+          margin-bottom: $padding;
+        }
+      }
+
+      .right-description {
+        min-width: 100%;
+        margin-left: 0;
+
+        .title {
+          margin: $padding 0;
+        }
+      }
+    }
+  }
+
+  .profile {
+    grid-template-rows: $toprowheight repeat(2, $submenuheight) repeat(5, $padding auto $padding);
+
+    .box1 {
+      grid-area: 4 / 3 / 8 / 3;
+      padding: $textboxpadding;
+
+      p {
+        padding: 0;
+        margin-bottom: $padding;
+      }
+    }
+
+    .pic1 {
+      grid-area: 7 / 2 / 10 / 5;
+      place-self: start;
+      width: 50%;
+    }
+
+    .banner1 {
+      grid-area: 10 / 1 / 13 / 6;
+      grid-template-columns: inherit;
+      grid-template-rows: $padding auto auto $padding;
+
+      .bannertext1 {
+        grid-area: 2 / 2 / 3 / 5;
+      }
+
+      .bannertext2 {
+        grid-area: 3 / 2 / 4 / 5;
+      }
+    }
+
+    .pic2 {
+      grid-area: 13 / 2 / 16 / 5;
+      place-self: end;
+      width: 50%;
+    }
+
+    .box2 {
+      grid-area: 15 / 3 / 19 / 4;
+      padding: $textboxpadding;
+
+      p {
+        padding: 0;
+        margin-top: $padding;
+      }
+    }
+  }
+
+  .contact {
+    .subheading {
+      grid-area: 2 / 3 / 4 / 4;
+    }
+
+    form {
+      grid-area: 5 / 2 / 7 / 5;
+
+      input, textarea {
+        width: 480px;
+      }
+    }
+  }
+
+  .footer {
+    .copyright {
+      padding: $footerpaddingmedium;
+    }
+
+    .icons {
+      padding: $footerpaddingmedium;
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  h1 {
+    font-size: 36px;
+    margin: $headlinemargins;
+    padding: 0;
+
+    sup {
+      font-size: 28px;
+    }
+  }
+
+  h2 {
+    font-size: 32px;
+    margin: $headlinemargins;
+    padding: 0;
+
+    sup {
+      font-size: 24px;
+    }
+  }
+
+  h3 {
+    font-size: 28px;
+    margin: $headlinemargins;
+    padding: 0;
+
+    sup {
+      font-size: 20px;
+    }
+  }
+
+  .main {
+    grid-template-columns: minmax(1.2rem, 1fr) $padding minmax(auto, 50ch) $padding minmax(1.2rem, 1fr);
+  }
+
+  .portfolio {
+    .project-list {
+      a {
+        .gallery-card {
+          .gallery-pic {
+            width: 200px;
+
+            .ol-text,
+            .overlay {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .first-exam {
+    .styleguide {
+      .stylecard {
+        a {
+          width: 100%;
+        }
+      }
+    }
+
+    .remakes-banner {
+      .remakes {
+        .remake-card {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .contact {
+    grid-template-rows: $toprowheight auto $padding auto $padding;
+
+    .subheading {
+      grid-area: 2 / 3 / 3 / 4;
+    }
+
+    form {
+      grid-area: 4 / 2 / 6 / 5;
+      width: 100%;
+
+      input {
+        width: 100%;
+      }
+
+      textarea {
+        width: 100%;
+      }
+    }
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+
+    .copyright {
+      text-align: center;
+      width: 100%;
+      margin: 0;
+      padding-top: $footerpaddingsmall;
+    }
+
+    .icons {
+      text-align: center;
+      width: 100%;
+      margin: 0;
+      padding-bottom: $footerpaddingsmall;
+
+      .i {
+        margin: 0 10px;
+      }
+    }
+  }
+}

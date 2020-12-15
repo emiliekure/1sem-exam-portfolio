@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emilie Kure | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="script.js"></script>
+
+  <!-- Logo in tab -->
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/favicomatic/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicomatic/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicomatic/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicomatic/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="img/favicomatic/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/favicomatic/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="img/favicomatic/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/favicomatic/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="img/favicomatic/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="img/favicomatic/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="img/favicomatic/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="img/favicomatic/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="img/favicomatic/favicon-128.png" sizes="128x128" />
+  <meta name="application-name" content="&nbsp;" />
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="img/favicomatic/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="img/favicomatic/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="img/favicomatic/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="img/favicomatic/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="img/favicomatic/mstile-310x310.png" />
+</head>
+
+<body>
+  <div class="header">
+    <a href="index.html"><img class="nav-logo" src="img/ek-logo-w500.png" alt="Emilie Kure logo" title="Emilie Kure logo"></a>
+    <span onclick="openNav()"><img id="openmenu" src="img/ek-logo-w500.png" alt="Emilie Kure logo" title="Emilie Kure logo"></span>
+    <div id="menu">
+      <div class="closemenu">
+        <a href="javascript:void(0)" onclick="closeNav()"><i data-feather="x"></i></a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="portfolio.html">Portfolio</a></li>
+        <li><a href="about/profile.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main portfolio">
+    <div class="headline">
+      <h2>Portfolio</h2>
+    </div>
+
+    <span id="opensub1" onclick="openNav1()">All projects <i data-feather="chevron-right"></i></span>
+    <div id="submenu-1">
+      <div class="closemenu">
+        <a href="javascript:void(0)" onclick="closeNav1()"><i data-feather="x"></i></a>
+      </div>
+      <ul>
+        <li><a class="active" href="portfolio.html">All projects</a></li>
+        <li><a href="portfolio/professional.html">Professional work <i class="iconarrow" data-feather="chevron-right"></i></a></li>
+        <li><a href="portfolio/school.html">School projects <i class="iconarrow" data-feather="chevron-right"></i></a></li>
+      </ul>
+    </div>
+
+    <div class="project-list">
+      <!-- <a href="#">
+        <div class="gallery-card">
+          <div class="gallery-pic">
+            <img src="img/pattern.png" alt="Graphic pattern background">
+            <div class="project-title"><h3>Project title</h3></div>
+            <div class="overlay"></div>
+            <div class="ol-text">Brief description</div>
+          </div>
+        </div>
+      </a> -->
+
+      <a href="portfolio/school/1-sem/flow5-exam.html">
+        <div class="gallery-card">
+          <div class="gallery-pic">
+            <img src="img/pattern.png" alt="Graphic pattern background">
+            <div class="project-title"><h3>1<sup>st</sup> semester exam project</h3></div>
+            <div class="overlay"></div>
+            <div class="ol-text">A complete rundown of the elements contained in my 1<sup>st</sup> semester final project.</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="portfolio/school/1-sem/flow4-project.html">
+        <div class="gallery-card">
+          <div class="gallery-pic">
+            <img src="img/pattern.png" alt="Graphic pattern background">
+            <div class="project-title"><h3>Global goal campaign</h3></div>
+            <div class="overlay"></div>
+            <div class="ol-text">Main project from 1<sup>st</sup> semester flow 4. Make a campaign with a video for a store in Lyngby Storcenter, with connection to a UN global goal.</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="portfolio/school/1-sem/flow4-assignment.html">
+        <div class="gallery-card">
+          <div class="gallery-pic">
+            <img src="img/pattern.png" alt="Graphic pattern background">
+            <div class="project-title"><h3>Icons</h3></div>
+            <div class="overlay"></div>
+            <div class="ol-text">Small assignment from 1<sup>st</sup> semester flow 4. Create 3-5 thematically cohesive icons in Adobe Illustrator.</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="portfolio/school/1-sem/flow3-project.html">
+        <div class="gallery-card">
+          <div class="gallery-pic">
+            <img src="img/pattern.png" alt="Graphic pattern background">
+            <div class="project-title"><h3>Build an app</h3></div>
+            <div class="overlay"></div>
+            <div class="ol-text">Main project from 1<sup>st</sup> semester flow 3. Make a prototype of an app, with connection to a UN global goal.</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="portfolio/school/1-sem/flow2-project.html">
+        <div class="gallery-card">
+          <div class="gallery-pic">
+            <img src="img/pattern.png" alt="Graphic pattern background">
+            <div class="project-title"><h3>Build your portfolio</h3></div>
+            <div class="overlay"></div>
+            <div class="ol-text">Main project from 1<sup>st</sup> semester flow 2. Create an online version of your portfolio, using HTML and CSS.</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="portfolio/school/1-sem/flow1-project.html">
+        <div class="gallery-card">
+          <div class="gallery-pic">
+            <img src="img/pattern.png" alt="Graphic pattern background">
+            <div class="project-title"><h3>Dream your portfolio</h3></div>
+            <div class="overlay"></div>
+            <div class="ol-text">Main project from 1<sup>st</sup> semester flow 1. Make a prototype of your portfolio website in Adobe XD.</div>
+          </div>
+        </div>
+      </a>
+
+      <a href="portfolio/school/1-sem/flow1-assignment.html">
+        <div class="gallery-card">
+          <div class="gallery-pic">
+            <img src="img/pattern.png" alt="Graphic pattern background">
+            <div class="project-title"><h3>Photoshop</h3></div>
+            <div class="overlay"></div>
+            <div class="ol-text">Small assignment from 1<sup>st</sup> semester flow 1. Edit a photo in Adobe Photoshop.</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="copyright">
+      <p>Copyright &copy; 2020 Emilie Kure</p>
+    </div>
+    <div class="icons">
+      <div class="i">
+        <a href="https://github.com/emiliekure"><i data-feather="github"></i></a>
+      </div>
+      <div class="i">
+        <a href="https://www.instagram.com/emigmatik/"><i data-feather="instagram"></i></a>
+      </div>
+      <div class="i">
+        <a href="https://www.facebook.com/emiliekurebehnke/"><i data-feather="facebook"></i></a>
+      </div>
+    </div>
+  </div>
+  <script>
+    feather.replace()
+  </script>
+</body>
+
+</html>

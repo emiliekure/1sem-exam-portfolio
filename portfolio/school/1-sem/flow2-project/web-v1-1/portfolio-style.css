@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap');
+/* Font (Maven Pro) credit: Joe Prince, Dribbble: https://dribbble.com/joeprince
+CSS syntax:
+font-family: 'Maven Pro', sans-serif;
+font-weight: 400 - 900; */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* Font (Open Sans) credit: Steve Matteson, Website: https://twitter.com/SteveMatteson1
+CSS syntax:
+font-family: 'Open Sans', sans-serif;
+font-weight: 0,400 0,700 1,400 1,700; 0=regular, 1=italic */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;1,300;1,500&display=swap');
+/* Font (Ubuntu) credit: Dalton Maag, Website: https://www.daltonmaag.com/
+CSS syntax:
+font-family: 'Ubuntu', sans-serif;
+font-weight: 0,300 0,500 1,300 1,500; 0=regular, 1=italic */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Maven Pro', sans-serif;
+  color: #737373;
+  background-color: #f2f2f2;
+}
+
+nav {
+  font-size: 1.2vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5vw;
+  background-color: #deedde;
+  border-bottom: 1px solid #737373;
+}
+
+.menu-level-1 {
+  list-style: none;
+  top: 0;
+  left: 0;
+  padding-left: 4vw;
+  margin-top: 1.2vw;
+}
+
+.top-logo {
+  height: 100%;
+  padding: 0 0 0 1vw;
+}
+
+.menu-level-1 a {
+  color: #707070;
+  text-decoration: none;
+  padding: 0 0 0 1vw;
+  display: block;
+  line-height: 2.5vw;
+}
+
+.menu-level-1 a:hover {
+  font-weight: 600;
+  background-color: #bedbbd;
+}
+
+.active {
+  font-weight: 600;
+}
+
+.menu-level-1 > li {
+  position: relative;
+  float: left;
+  height: 2.5vw;
+  width: 11vw;
+  background-color: #deedde;
+}
+
+.menu-level-1 li:hover > ul {
+  display: inline;
+}
+
+.menu-level-2 {
+  position: absolute;
+  top: 2.5vw;
+  left: 0;
+  width: 11vw;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.menu-level-2 > li {
+  position: relative;
+  height: 2.5vw;
+  background-color: #e6e6e6;
+}
+
+.menu-level-2 a:hover {
+  font-weight: 600;
+  background-color: #9dc99c;
+}
+
+.menu-level-3 {
+  position: absolute;
+  top: 0;
+  right: -11vw;
+  width: 11vw;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.menu-level-3 > li {
+  height: 2.5vw;
+  background-color: #d9d9d9;
+}
+
+.menu-level-3 a:hover {
+  font-weight: 600;
+  background-color: #7cb87a;
+}
+
+.container-1 {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  z-index: -1;
+  top: 10vw;
+  left: 0;
+  width: 100%;
+  /*background-color: lightblue;*/
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 5vw;
+}
+
+.header img {
+  width: 15%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5vw;
+}
+
+.header h1 {
+  margin-top: -2.5%;
+  width: 100%;
+  font-size: 5vw;
+  text-align: center;
+  /*background-color: lightgreen;*/
+}
+
+.header h2 {
+  margin-top: -2.5%;
+  width: 100%;
+  font-size: 3vw;
+  font-weight: 300;
+  text-align: center;
+  color: #f2f2f2;
+  text-shadow: 0 0 1vw #000000, 0 0 0.5vw #000000;
+}
+
+.header p {
+  font-family: 'Ubuntu', sans-serif;
+  width: 60%;
+  margin: auto;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.5vw;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 5%;
+  /*background-color: pink;*/
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  width: 60%;
+  background-color: #ffffff;
+  box-shadow: 0 0 2vw 0.5vw #bfbfbf;
+  margin-bottom: 5vw;
+}
+
+.section img {
+  width: 35%;
+}
+
+.section h2 {
+  font-size: 1.8vw;
+  margin-bottom: 0.5vw;
+}
+
+.section p {
+  font-size: 1.2vw;
+  margin-top: 0.7vw;
+}
+
+.box-text {
+  width: 65%;
+  padding: 0 2vw;
+}
+
+.s-box {
+  width: 35%;
+  background-color: #f2f2f2;
+  padding: 1vh 2vw;
+}
+
+.s-box p {
+  color: #9dc99c;
+  font-weight: 600;
+  font-size: 1vw;
+  margin-top: -2%;
+  margin-bottom: 5%;
+}
+
+.l-box {
+  width: 65%;
+  padding: 1vh 2vw;
+}
+
+.l-box h2 {
+  font-size: 1.5vw;
+  margin-top: -2%;
+}
+
+.l-box p {
+  font-size: 1vw;
+}
+
+.section h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.1vw;
+}
+
+.section p.about {
+  margin-top: 5%;
+  font-size: 1.4vw;
+}
+
+.content {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.content h2 {
+  font-size: 1.5vw;
+}
+
+.content p {
+  font-size: 1.2vw;
+}
+
+.scope {
+  width: 45%;
+  background-color: #ffffff;
+  box-shadow: 0 0 2vw 0.5vw #bfbfbf;
+  margin-bottom: 5vw;
+  padding: 1vh 2vw;
+}
+
+.idea {
+  width: 45%;
+  background-color: #ffffff;
+  box-shadow: 0 0 2vw 0.5vw #bfbfbf;
+  margin-bottom: 5vw;
+  padding: 1vh 2vw;
+}
+
+.content > h2 {
+  display: block;
+  font-size: 2.5vw;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 10vw;
+}
+
+.coming-content {
+  width: 75%;
+  margin: auto;
+  margin-bottom: 10%;
+  margin-top: -7vw;
+}
+
+.coming-content h2 {
+  font-size: 4vw;
+  text-align: center;
+}
+
+.coming-content p {
+  margin: auto;
+  font-weight: 300;
+  font-size: 1.4vw;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80%;
+  margin: auto;
+  margin-top: -7%;
+  margin-bottom: 5%;
+}
+
+.card {
+  width: 20vw;
+  height: 20vw;
+  box-shadow: 0 0 2vw 0.5vw #bfbfbf;
+  text-align: center;
+  background-color: #ffffff;
+  margin: 1.5vh 0;
+  overflow: hidden;
+}
+
+.card a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.3vw;
+}
+
+.card a p {
+  margin-top: 6%;
+}
+
+.card:hover {
+  box-shadow: 0 0 2vw 0.5vw #999999;
+}
+
+.card .img {
+  width: 20vw;
+  height: 16vw;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 60vw;
+  margin: auto;
+  margin-bottom: 5vw;
+  margin-top: -4.5%;
+}
+
+form input {
+  width: 47.5%;
+  font-size: 1.2vw;
+  font-family: inherit;
+  color: inherit;
+  background-color: #ffffff;
+  border: 0;
+  padding: 0.7vh 0.7vw;
+  box-shadow: 0 0 2vw 0.5vw #bfbfbf;
+}
+
+form input[type="submit"] {
+  margin: auto;
+}
+
+form input[type="submit"]:hover {
+  background-color: #deedde;
+}
+
+form *::placeholder {
+  color: #bfbfbf;
+}
+
+.form-input {
+  margin-bottom: 3vw;
+}
+
+form textarea {
+  width: 100%;
+  font-size: 1.2vw;
+  font-family: inherit;
+  color: inherit;
+  background-color: #ffffff;
+  border: 0;
+  padding: 0.7vh 0.7vw;
+  box-shadow: 0 0 2vw 0.5vw #bfbfbf;
+  resize: none;
+}
+
+form *:hover {
+  box-shadow: 0 0 2vw 0.5vw #999999;
+}
+
+form *:focus {
+  outline:none !important;
+  background-color: #deedde;
+  box-shadow: 0 0 2vw 0.5vw #bfbfbf;
+}
+
+.footer {
+  position: relative;
+  margin-top: auto;
+  bottom: 0;
+  padding-left: 5vw;
+  width: 100%;
+  background-color: #737373;
+  color: #ffffff;
+  font-size: 1vw;
+}
+
+@media screen and (max-width: 900px) {
+/* start of tablet styles */
+
+}
+
+@media screen and (max-width: 480px) {
+/* start of phone styles */
+
+}
