@@ -1934,8 +1934,7 @@ h4 {
 
     .pic1 {
       grid-area: 7 / 2 / 10 / 5;
-      place-self: start;
-      width: 50%;
+      width: 100%;
     }
 
     .banner1 {
@@ -1954,8 +1953,7 @@ h4 {
 
     .pic2 {
       grid-area: 13 / 2 / 16 / 5;
-      place-self: end;
-      width: 50%;
+      width: 100%;
     }
 
     .box2 {
