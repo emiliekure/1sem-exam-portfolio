@@ -600,7 +600,7 @@ h4 sup {
 }
 
 .first-project .product a .gallery-card .gallery-pic {
-  width: 350px
+  width: 100%
 }
 
 .first-project .product a .gallery-card .gallery-pic img {
@@ -686,7 +686,7 @@ h4 sup {
   padding: 0
 }
 
-.first-project .changes {
+.first-project #changes {
   grid-area: 16 / 3 / 18 / 10;
   place-self: end center;
   background-color: #fff;
@@ -697,20 +697,20 @@ h4 sup {
   text-align: center
 }
 
-.first-project .changes h4, .first-project .changes ul {
+.first-project #changes h4, .first-project #changes ul {
   text-align: left
 }
 
-.first-project .changes ul {
+.first-project #changes ul {
   line-height: 175%
 }
 
-.first-project .changes .btnlinkgreen {
+.first-project #changes .btnlinkgreen {
   display: block;
   width: 100%
 }
 
-.first-project .changes .btnlinkgreen .button {
+.first-project #changes .btnlinkgreen .button {
   margin-top: 16px
 }
 
@@ -913,15 +913,11 @@ h4 sup {
 .first-exam .remakes-banner .remakes .remake-card {
   width: 25%;
   text-align: center;
-  margin-top: 32px
-}
-
-.first-exam .remakes-banner .remakes .remake-card p {
-  font-weight: 500
+  margin-top: 16px
 }
 
 .first-exam .remakes-banner .remakes .remake-card .btnlinkgrey .button {
-  margin: 32px 16px 16px
+  margin: 16px 16px
 }
 
 .first-exam .code {
@@ -1226,6 +1222,7 @@ h4 sup {
   color: inherit;
   background-color: #fff;
   border: 0;
+  border-radius: 0;
   box-shadow: 0 0 16px 4px rgba(153, 153, 153, 0.5);
   margin: 20px;
   padding: 12px;
@@ -1239,6 +1236,13 @@ h4 sup {
 
 .contact form textarea {
   width: 760px
+}
+
+.contact form input[type=text], .contact form input[type=submit], .contact form textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  opacity: 1
 }
 
 .contact form *::placeholder {

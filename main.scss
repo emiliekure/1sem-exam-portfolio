@@ -631,7 +631,7 @@ h4 {
         padding: 0;
 
         .gallery-pic {
-          width: 350px;
+          width: 100%;
 
           img {
             height: auto;
@@ -726,7 +726,7 @@ h4 {
     }
   }
 
-  .changes {
+  #changes {
     grid-area: 16 / 3 / 18 / 10;
     place-self: end center;
     background-color: $lighttext;
@@ -953,15 +953,11 @@ h4 {
       .remake-card {
         width: 25%;
         text-align: center;
-        margin-top: $padding;
-
-        p {
-          font-weight: 500;
-        }
+        margin-top: 16px;
 
         .btnlinkgrey {
           .button {
-            margin: $padding 16px 16px;
+            margin: 16px 16px;
           }
         }
       }
@@ -1273,6 +1269,7 @@ h4 {
       color: inherit;
       background-color: $lighttext;
       border: 0;
+      border-radius: 0;
       box-shadow: $boxshadow;
       margin: 20px;
       padding: 12px;
@@ -1286,6 +1283,13 @@ h4 {
 
     textarea {
       width: 760px;
+    }
+
+    input[type=text], input[type=submit], textarea {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      opacity: 1;
     }
 
     *::placeholder {
